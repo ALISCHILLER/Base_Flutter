@@ -21,6 +21,15 @@ class ScaffoldExample extends StatelessWidget {
 
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.lightGreen,
+          child:Icon(Icons.call_missed),
+          onPressed: ( )=> debugPrint("Hello ")),
+      bottomNavigationBar: BottomNavigationBar(items:[
+        BottomNavigationBarItem(icon: Icon(Icons.account_circle), label: "Home"),
+        BottomNavigationBarItem(icon: Icon(Icons.ac_unit), label: "Second"),
+        BottomNavigationBarItem(icon: Icon(Icons.access_alarm), label: "Third"),
+      ],onTap:(int index) => debugPrint("Tapped item :$index"),),
       backgroundColor: Colors.redAccent.shade100,
       body:Container(
         alignment: Alignment.center,
