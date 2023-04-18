@@ -15,6 +15,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  TextEditingController textEditingController=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,6 +30,28 @@ class _MyAppState extends State<MyApp> {
         child: Center(
           child: Column(
             children: [
+               Padding(
+                 padding: const EdgeInsets.all(10),
+                 child: Row(
+                   children: [
+                     Padding(
+                       padding: const EdgeInsets.only(right: 15),
+                       child: ElevatedButton(onPressed: (){
+
+                       }, child: Text("find")),
+                     ),
+                     Expanded(
+                         child: TextField(
+                           controller:textEditingController,
+                           decoration: InputDecoration(
+                             hintText: 'enter a city name',
+                               border:UnderlineInputBorder()
+                           )
+
+                         ))
+                   ],
+                 ),
+               ),
                Padding(
                 padding: EdgeInsets.only(top:50),
                 child: Text("MsA View",style: TextStyle(color:Colors.white,fontSize: 35),),
@@ -102,12 +125,13 @@ class _MyAppState extends State<MyApp> {
                             height: 50,
                             width: 70,
                             child:  Card(
+                              elevation: 0,
                               color: Colors.transparent,
                               child: Column(
                                 children: const [
-                                  Text("Fri,Bpm",style: TextStyle(color: Colors.grey,fontSize: 10),),
+                                  Text("Fri,Bpm",style: TextStyle(color: Colors.white,fontSize: 10),),
                                   Icon(Icons.cloud,color:Colors.white,),
-                                  Text("14""\u0000",style: TextStyle(color: Colors.grey,fontSize: 20),),
+                                  Text("14""\u0000",style: TextStyle(color: Colors.white,fontSize: 20),),
                                 ],
                               ),
                             ),
